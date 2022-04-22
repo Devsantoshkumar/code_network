@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/',[App\Http\Controllers\Frontend\FrontendController::class,'index']);
+Route::get('tutorial/{category_slug}',[App\Http\Controllers\Frontend\FrontendController::class,'viewCategoryPost']);
+Route::get('tutorial/{category_slug}/{post_slug}',[App\Http\Controllers\Frontend\FrontendController::class,'viewPost']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
