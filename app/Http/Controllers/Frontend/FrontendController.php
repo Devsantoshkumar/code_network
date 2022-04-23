@@ -6,13 +6,16 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\Setting;
 
 class FrontendController extends Controller
 {
     public function index()
     {
+        $setting = Setting::find(1);
         $all_category = Category::where('status','0')->get();
-        return view('frontend.index',compact('all_category'));
+        $latest_post = Post::where('status','0')->orderBy('created_at','DESC')->get()->take(10);
+        return view('frontend.index',compact('all_category','latest_post','setting'));
     }
 
     public function viewCategoryPost(string $category_slug)

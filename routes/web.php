@@ -4,11 +4,19 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::get('resourse/index',function(){
+    return view('frontend.resourse.index');
+});
+
 Route::get('/',[App\Http\Controllers\Frontend\FrontendController::class,'index']);
 Route::get('tutorial/{category_slug}',[App\Http\Controllers\Frontend\FrontendController::class,'viewCategoryPost']);
 Route::get('tutorial/{category_slug}/{post_slug}',[App\Http\Controllers\Frontend\FrontendController::class,'viewPost']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// comments system
+Route::post('comments',[App\Http\Controllers\commentController::class,'store']);
+Route::post('delete-comment',[App\Http\Controllers\commentController::class,'delete']);
 
 Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
 
@@ -30,6 +38,9 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
     Route::get('users',[App\Http\Controllers\Admin\UserController::class,'index']);
     Route::get('edit-user/{user_id}',[App\Http\Controllers\Admin\UserController::class,'edit']);
     Route::put('update-user/{user_id}',[App\Http\Controllers\Admin\UserController::class,'update']);
+    
+    Route::get('settings',[App\Http\Controllers\Admin\SettingController::class,'index']);
+    Route::post('settings',[App\Http\Controllers\Admin\SettingController::class,'store']);
     
 });
 

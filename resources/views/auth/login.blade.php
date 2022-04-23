@@ -6,8 +6,11 @@
 @section('content')
 <div class="container my-5">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+        <div class="col-md-6">
+            @if (session('massage'))
+                    <h6 class="alert alert-warning mb-3">{{session('massage')}}</h6>
+                @endif
+            <div class="card border-0 shadow-sm">
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
@@ -42,7 +45,7 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
+                        {{-- <div class="row mb-3">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
@@ -52,19 +55,19 @@
                                     </label>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-sm rounded-0 btn-primary">
                                     {{ __('Login') }}
                                 </button>
 
-                                @if (Route::has('password.request'))
+                                {{-- @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
-                                @endif
+                                @endif --}}
                             </div>
                         </div>
                     </form>

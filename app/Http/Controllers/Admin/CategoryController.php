@@ -103,8 +103,9 @@ class CategoryController extends Controller
             {
                 File::delete($destination);
             }
+            $category->posts()->delete();
             $category->delete();
-            return redirect('admin/category')->with('massage','Category deleted successfully');
+            return redirect('admin/category')->with('massage','Category deleted with posts successfully');
         }
         else{
             return redirect('admin/category')->with('massage','No category id found');

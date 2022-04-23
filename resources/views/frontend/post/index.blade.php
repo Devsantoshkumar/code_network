@@ -7,11 +7,12 @@
 @section('content')
     <div class="container py-5">
         <div class="row">
-          <div class="col-8">
-            <div class="card rounded-0">
-                <div class="card-header border-0 rounded-0 fw-bold">
-                    <h5 class="text-uppercase">{{$category->name}}</h5>
-                </div>
+          <div class="col-md-8">
+            <div class="card categoryImage rounded-0 position-relative" height="200px" >
+               <img src="{{asset('uploads/category/'.$category->image)}}" height="200px" alt="image" />
+               <div class="card-body position-absolute w-100">
+                  <h4 class="text-uppercase text-light">{{$category->name}}</h4>
+               </div>
             </div>
 
             @forelse ($post as $postItems)
@@ -37,7 +38,7 @@
 
 
           </div>
-          <div class="col-4">
+          <div class="col-md-4">
             <h6 class="text-center border p-3">Advertisment</h6>
           </div>
         </div>

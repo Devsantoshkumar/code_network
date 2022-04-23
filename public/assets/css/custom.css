@@ -32,3 +32,45 @@
 .owl-carousel .owl-nav.disabled {
     display: block;
 }
+
+.myCardCate{
+    background-color: #4d4d4d !important;
+    color: #fff;
+}
+
+.latestPostLinks{
+    display: block;
+    margin-bottom: 10px !important;
+}
+
+.categoryImage img{
+    object-fit: cover;
+}
+
+.breadcrumb .breadcrumb-item{
+    font-size: 14px !important;
+}
+
+.postShotDesc{
+    font-size: 12px !important;
+}
+
+.commentShorts{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.mainComment{
+    font-size: 12px;
+}
+
+.underConstruction img{
+   width: 100%;
+   object-fit: cover;
+}
+.form-control{
+    border-radius: 0 !important;
+}
+.form-control:focus{
+    box-shadow: none !important;
+}
