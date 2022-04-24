@@ -8,12 +8,12 @@
     <meta name="description" content="@yield('description')">
     <meta name="keywords" content="@yield('keywords')">
     <title>@yield('title')</title>
-    @php
+    {{-- @php
         $setting = App\Models\Setting::find(1);
     @endphp
     @if ($setting)
     <link rel="shortcut icon" href="{{asset('uploads/settings/'.$setting->favicon)}}" type="image/x-icon">
-    @endif
+    @endif --}}
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
