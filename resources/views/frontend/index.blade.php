@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('title',"$setting->meta_title")
-@section('description',"$setting->meta_description")
-@section('keywords',"$setting->meta_keyword")
+@section('title',"cpdingnetwork")
+@section('description',"this is programming language")
+@section('keywords',"html, css ,js")
 
 @section('content')
     <div class="bg-light pt-5 pb-3 border-bottom">
